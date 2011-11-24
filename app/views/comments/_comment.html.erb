@@ -1,0 +1,14 @@
+<div>
+  <p><%= comment.commenter %> said:</p>
+  <%= comment.body %>
+
+<p>
+  <%= link_to 'Edit', edit_comment_path(comment) %> |
+
+  <%= link_to 'Destroy Comment', [comment.post, comment],
+               :confirm => 'Are you sure?',
+               :method => :delete %>
+
+
+</p>
+</div>

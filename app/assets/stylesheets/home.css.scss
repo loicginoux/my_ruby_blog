@@ -1,0 +1,99 @@
+/* @override http://www.macrabbit.com/cssedit/welcome/2.5/welcome.css */
+
+
+
+
+html{
+	background-color: #4c729b;
+}
+
+h1{
+	font-size:	26px;
+	margin: 30px 0px;
+}
+
+h2{
+	font-size: 20px;
+	margin: 20px 0px;
+}
+
+p{
+	margin: 10px 0px;
+}
+body{
+	background-color: #EEEEEE;
+	padding: 20px;
+	margin: 50px;
+	width: auto;
+	
+	border: 1px solid #333;
+	font: 14px "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+}
+
+#blogTitle{
+}
+
+h1.blogTitle{
+	text-align: center;
+}
+
+#user_nav {
+  float: right;
+  font-size: 12px;
+}
+
+.admin_link{
+  font-size: 12px;	
+}
+
+.postTitle{
+}
+
+.postTitle h2{
+}
+
+
+.postTitle h2 a{
+	text-decoration: none;
+}
+
+
+.postTitle .metaPost{
+	font-style: italic;
+	
+}
+
+
+.postContent p{
+margin-top: 30px;
+	text-align: justify;
+}
+
+
+#notice {
+  color: green; }
+
+.field_with_errors {
+  padding: 2px;
+  background-color: red;
+  display: table; }
+
+#error_explanation {
+  width: 450px;
+  border: 2px solid red;
+  padding: 7px;
+  padding-bottom: 0;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+  h2 {
+    text-align: left;
+    font-weight: bold;
+    padding: 5px 5px 5px 15px;
+    font-size: 12px;
+    margin: -7px;
+    margin-bottom: 0px;
+    background-color: #c00;
+    color: #fff; }
+  ul li {
+    font-size: 12px;
+    list-style: square; } }

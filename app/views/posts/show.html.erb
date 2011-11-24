@@ -1,0 +1,18 @@
+<p id="notice"><%= notice %></p>
+
+<h2><%= @post.name %> - <%= @post.title %></h2>
+<p><%= @post.content %></p>
+<p>
+  <b>Tags:</b>
+  <%= join_tags(@post) %>
+</p>
+
+<h3><%=@post.comments.size%> Comments</h3>
+<%= render @post.comments %>
+
+<h2>Add a comment:</h2>
+<%= render "comments/form" %>
+
+<%= link_to 'Edit', edit_post_path(@post) %> |
+<td><%= link_to 'Destroy', @post, :confirm => 'Are you sure?', :method => :delete %></td> |
+<%= link_to 'Back', posts_path %>
