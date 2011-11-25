@@ -56,6 +56,7 @@ class UsersController < ApplicationController
   # PUT /users/1
   # PUT /users/1.json
   def update
+    params[:user][:group_ids] ||= []
     @user = current_user
 
     respond_to do |format|

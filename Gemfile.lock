@@ -1,3 +1,9 @@
+GIT
+  remote: git://github.com/stffn/declarative_authorization.git
+  revision: 2b26106edd97cf5c72a51e144d5f192ecbc3c19a
+  specs:
+    declarative_authorization (0.5.3)
+
 GEM
   remote: http://rubygems.org/
   specs:
@@ -112,6 +118,7 @@ PLATFORMS
 DEPENDENCIES
   authlogic
   coffee-rails (~> 3.1.1)
+  declarative_authorization!
   jquery-rails
   json
   rails (= 3.1.1)

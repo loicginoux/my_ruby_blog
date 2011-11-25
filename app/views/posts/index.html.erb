@@ -1,14 +1,20 @@
 <p id="notice"><%= notice %></p>
+<% if flash[:error] %>
+	<p id='error'><%= flash[:error] %></p>
+<% end -%>
 
 <div class="admin_link">
-<%= link_to 'New Post', new_post_path %>
+	<% if permitted_to? :create, Post.new %>
+		<%= link_to 'New Post', new_post_path %>
+	<% end %>
 </div>
 
 <% @posts.each do |post| %>
     <div class="postTitle">
-	<h2><%= post.name %> - <%= post.title %></h2>
+	<h2><%= link_to "#{post.name} - #{post.title}", post %> </h2>
     	<div class="metaPost">
-    		<%= post.comments.size%> comments
+    		<%= post.comments.size%> comments - <%= post.created_at.to_s(:my_default_time)%>
+    		
     	</div>
     </div>
     <div class="postContent">
@@ -16,9 +22,12 @@
     </div>
 	
 	<div class="admin_link">
-		<%= link_to 'Show', post %>
-		<%= link_to 'Edit', edit_post_path(post) %>
-		<%= link_to 'Destroy', post, :confirm => 'Are you sure?', :method => :delete %>
+		<% if permitted_to? :edit, post %>
+			<%= link_to 'Edit', edit_post_path(post) %>
+		<% end %>
+		<% if permitted_to? :destroy, post %>
+			<%= link_to 'Destroy', post, :confirm => 'Are you sure?', :method => :delete %>
+		<% end %>
 	</div>
 <% end %>
 

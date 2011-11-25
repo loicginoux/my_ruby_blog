@@ -27,6 +27,17 @@
     <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation %>
   </div>
+
+  <div class="field">
+    <%= f.label :group %><br />
+	<%= collection_select(:user, :group_ids, Group.all, :id, :name, 
+		{ :selected => @user.group_ids },
+		{:multiple => true, :group => 'user[group_ids][]' }) %>
+  </div>
+
+
+
+
   <div class="actions">
     <%= f.submit %>
   </div>

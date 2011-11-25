@@ -11,7 +11,7 @@
 	<div id="user_nav">
 	  <% if current_user %>
 		Hi <%=current_user.username%>, 
-	    <%= link_to "Edit Profile", edit_user_path(:current) %> |
+	    <%= link_to "Edit Profile", edit_user_path(current_user.id) %> |
 	    <%= link_to "Logout", logout_path %>
 	  <% else %>
 	    <%= link_to "Register", new_user_path %> |
@@ -19,7 +19,7 @@
 	  <% end %>
 	</div>
 	
- 	<h1 class='blogTitle'>My Sandbox Blog</h1>
+ 	<h1 class='blogTitle'><%= link_to "My Blog", root_url %></h1>
 
 <%= yield %>
  

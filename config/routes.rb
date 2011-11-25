@@ -1,5 +1,7 @@
 Blog::Application.routes.draw do
   
+  resources :groups
+
   resources :user_sessions
   
   match 'login' => 'user_sessions#new'

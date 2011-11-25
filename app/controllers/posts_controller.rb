@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-
+  filter_resource_access
   
   # GET /posts
   # GET /posts.json
@@ -15,7 +15,7 @@ class PostsController < ApplicationController
   # GET /posts/1
   # GET /posts/1.json
   def show
-    @post = Post.find(params[:id])
+    @post = Post.find(params[:id], :include => :comments)
 
     respond_to do |format|
       format.html # show.html.erb
@@ -42,7 +42,8 @@ class PostsController < ApplicationController
   # POST /posts
   # POST /posts.json
   def create
-    @post = Post.new(params[:post])
+    @post = current_user.posts.create(params[:post])
+    # @post = Post.new(params[:post])
 
     respond_to do |format|
       if @post.save

@@ -3,12 +3,13 @@
   <%= comment.body %>
 
 <p>
-  <%= link_to 'Edit', edit_comment_path(comment) %> |
-
-  <%= link_to 'Destroy Comment', [comment.post, comment],
+	<% if permitted_to? :edit, comment %>
+  		<%= link_to 'Edit', edit_comment_path(comment) %> |
+	<% end %>
+	<% if permitted_to? :destroy, comment %>
+  		<%= link_to 'Delete', [comment.post, comment],
                :confirm => 'Are you sure?',
                :method => :delete %>
-
-
+	<% end %>
 </p>
 </div>

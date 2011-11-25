@@ -32,3 +32,5 @@ gem 'jquery-rails'
 # gem 'ruby-debug'
 
 gem "authlogic"
+
+gem "declarative_authorization",     :git => 'git://github.com/stffn/declarative_authorization.git'
